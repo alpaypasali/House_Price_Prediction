@@ -1,97 +1,73 @@
-🏡 House Prices — Advanced Regression Techniques
-🎯 End-to-End Machine Learning Pipeline (Kaggle Competition)
+# 🏡 **House Prices — Advanced Regression Techniques**
+### 🎯 *End-to-End Machine Learning Pipeline (Kaggle Competition)*
 
-This project is an end-to-end regression pipeline built using the Kaggle House Prices: Advanced Regression Techniques dataset.
-The goal is to develop a machine learning system that predicts the SalePrice of a home as accurately as possible based on its physical and qualitative features.
+This project is an end-to-end regression pipeline built using the **Kaggle House Prices: Advanced Regression Techniques** dataset.  
+The goal is to develop a machine learning system that predicts the **SalePrice** of a home as accurately as possible based on its physical and qualitative features.
 
-📂 Dataset Story
+---
 
-This project uses the well-known Ames Housing Dataset, consisting of:
+## 📂 **Dataset Story**
 
-79 explanatory variables
+This project uses the well-known **Ames Housing Dataset**, consisting of:
 
-1 target variable (SalePrice)
+- **79 explanatory variables**
+- **1 target variable (SalePrice)**
+- **1,460 observations in the training set**
+- **1,459 observations in the test set**
 
-1,460 observations in the training set
+The dataset includes a wide range of information—physical attributes, renovation status, material quality, location, and overall house condition.
 
-1,459 observations in the test set
+---
 
-The dataset includes a wide range of information—from physical attributes and renovation status to materials, location, and overall quality.
+## 🧭 **Roadmap of the Project**
 
-🧭 Roadmap of the Project
-1️⃣ Exploratory Data Analysis (EDA)
+### **1️⃣ Exploratory Data Analysis (EDA)**  
+- Numerical & categorical feature distributions  
+- Correlation analysis with SalePrice  
+- Missing value inspection  
+- Pairplots, heatmaps, boxplots  
 
-Distribution of numerical & categorical features
+### **2️⃣ Feature Engineering**  
+- Missing value imputation (median, mode, custom flags)  
+- Rare category handling  
+- Outlier detection using IQR  
+- New feature creation:
+  - `TotalSF`
+  - Age-related features (HouseAge, RemodelAge)
+  - Quality × Area interactions  
 
-Correlation analysis with SalePrice
+### **3️⃣ Preprocessing**  
+- Label Encoding & One-Hot Encoding  
+- Scaling (StandardScaler)  
+- Train/Test split  
 
-Missing value inspection
+### **4️⃣ Modeling**  
+Models trained and evaluated:
 
-Relationship plots (pairplot, heatmap, boxplot)
+- **LightGBM**
+- **Random Forest**
+- **XGBoost**
+- **GradientBoostingRegressor**
+- **Linear Models** (Ridge / Lasso / ElasticNet)
 
-2️⃣ Feature Engineering
+### **5️⃣ Hyperparameter Optimization**  
+- GridSearchCV  
+- RandomizedSearchCV  
+- 5-Fold Cross-Validation  
+- RMSE-based scoring  
 
-Missing value imputation (median, mode, custom flags)
+### **6️⃣ Model Evaluation**  
+- Train/Test RMSE  
+- Cross-validation RMSE  
+- Residual plots  
+- Feature importance visualizations  
 
-Rare category handling
+---
 
-Outlier detection using IQR
-
-New feature creation:
-
-TotalSF
-
-Age-related features
-
-Quality × area interaction terms
-
-3️⃣ Preprocessing
-
-Label Encoding & One-Hot Encoding
-
-Feature Scaling (StandardScaler)
-
-Train/Test split
-
-4️⃣ Modeling
-
-The following regression models were trained and evaluated:
-
-LightGBM
-
-Random Forest
-
-XGBoost
-
-GradientBoostingRegressor
-
-Linear Models (Ridge, Lasso, ElasticNet)
-
-5️⃣ Hyperparameter Optimization
-
-GridSearchCV
-
-RandomizedSearchCV
-
-5-Fold Cross-Validation
-
-RMSE-based model selection
-
-6️⃣ Model Evaluation
-
-Train/Test RMSE
-
-Cross-Validation RMSE
-
-Residual analysis
-
-Feature importance plots
-
-⚠️ About Warnings
+## ⚠️ **About Warnings**
 
 During execution, you may encounter warnings such as:
 
-RuntimeWarning: Mean of empty slice
 
 
 This typically occurs when Seaborn attempts to compute a mean on an empty subset of data (e.g., when a category has no observations after filtering).
@@ -134,6 +110,7 @@ house-price-regression/
 │── models/
 │── utils/
 
+
 📊 Model Performance
 
 The best performance was typically achieved using LightGBM with optimized hyperparameters.
@@ -148,3 +125,4 @@ git clone https://github.com/<username>/house-price-regression.git
 cd house-price-regression
 pip install -r requirements.txt
 jupyter notebook
+
